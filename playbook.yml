@@ -20,9 +20,11 @@
                 name: market-price
                 env:
                 - name: REDIS_HOST
-                  value: redis
+                  value: redis-master
                 - name: REDIS_PORT
                   value: "6379"
+                - name: REDIS_PASSWORD
+                  value: "n1c2S8NpK3"
           selector:
             matchLabels:
               app: market-price
