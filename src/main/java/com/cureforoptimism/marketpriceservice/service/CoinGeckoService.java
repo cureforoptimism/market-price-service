@@ -16,6 +16,17 @@ public class CoinGeckoService {
   @Scheduled(fixedDelay = 30000)
   public synchronized void refreshMagicPrice() {
     try {
+      final var coinFullData = client.getCoinById("magic");
+      marketPriceService.setAth(coinFullData.getMarketData().getAth().get("usd"));
+      marketPriceService.setMarketCapRank(coinFullData.getMarketCapRank());
+      marketPriceService.setAthDate(coinFullData.getMarketData().getAthDate().get("usd"));
+      marketPriceService.setHigh24h(coinFullData.getMarketData().getHigh24h().get("usd"));
+      marketPriceService.setLow24h(coinFullData.getMarketData().getLow24h().get("usd"));
+      marketPriceService.setPriceInEth(coinFullData.getMarketData().getCurrentPrice().get("eth"));
+      marketPriceService.setPriceInBtc(coinFullData.getMarketData().getCurrentPrice().get("btc"));
+      marketPriceService.setPriceChangePercentage7d(coinFullData.getMarketData().getPriceChangePercentage7d());
+      marketPriceService.setPriceChangePercentage30d(coinFullData.getMarketData().getPriceChangePercentage30d());
+
       marketPriceService.setEthPrice(client
                   .getPrice("ethereum", "usd", false, false, false, false)
                   .get("ethereum")

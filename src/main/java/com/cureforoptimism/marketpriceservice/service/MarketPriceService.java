@@ -69,4 +69,33 @@ public class MarketPriceService {
     marketPrice.setEthPrice(value);
   }
 
+  public void setMarketCapRank(Long value) {
+    marketPrice.setMarketCapRank(value);
+  }
+  public void setAth(Double value) {
+    marketPrice.setAth(value);
+  }
+
+  public void setAthDate(String value) {
+    marketPrice.setAthDate(value);
+  }
+
+  public void setHigh24h(Double value) {
+    marketPrice.setHigh24h(value);
+  }
+  public void setLow24h(Double value) {
+    marketPrice.setLow24h(value);
+  }
+  public void setPriceInEth(Double value) {
+    marketPrice.setPriceInEth(value);
+  }
+  public void setPriceInBtc(Double value) {
+    marketPrice.setPriceInBtc(value);
+  }
+  public void setPriceChangePercentage7d(Double value) {
+    marketPrice.setPriceChangePercentage7d(value);
+  }
+  public void setPriceChangePercentage30d(Double value) {
+    marketPrice.setPriceChangePercentage30d(value);
+  }
 }
