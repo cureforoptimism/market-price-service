@@ -8,7 +8,6 @@ pipeline {
            steps{
                script {
                    docker.withRegistry( 'https://registry.homelab.com', 'docker-creds' ) {
-                   docker.withRegistry( '', '' ) {
                        appimage.push()
                        appimage.push('latest')
                    }
