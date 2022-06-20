@@ -72,6 +72,23 @@ public class MarketPriceService {
   public void setMarketCapRank(Long value) {
     marketPrice.setMarketCapRank(value);
   }
+
+  public void setMarketCap(Double value) {
+    marketPrice.setMarketCap(value);
+  }
+
+  public void setCirculatingSupply(Double value) {
+    marketPrice.setCirculatingSupply(value);
+  }
+
+  public void setTotalSupply(Double value) {
+    marketPrice.setTotalSupply(value);
+  }
+
+  public void setMaxSupply(Double value) {
+    marketPrice.setMaxSupply(value);
+  }
+
   public void setAth(Double value) {
     marketPrice.setAth(value);
   }
