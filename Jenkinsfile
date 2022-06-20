@@ -7,6 +7,7 @@ pipeline {
        stage('Build Dockerfile and Publish') {
            steps{
                script {
+                   def appimage = docker.build registry + ":$BUILD_NUMBER"
                    docker.withRegistry( 'https://registry.homelab.com', 'docker-creds' ) {
                        appimage.push()
                        appimage.push('latest')
