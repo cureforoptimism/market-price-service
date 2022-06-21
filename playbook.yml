@@ -24,7 +24,7 @@
                 - name: REDIS_PORT
                   value: "6379"
                 - name: REDIS_PASSWORD
-                  value: "pQ3BTHiQSY"
+                  value: "a8ElD0aWae"
           selector:
             matchLabels:
               app: market-price
