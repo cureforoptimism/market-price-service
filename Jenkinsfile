@@ -8,7 +8,7 @@ pipeline {
            steps{
                script {
                    def appimage = docker.build registry + ":$BUILD_NUMBER"
-                   docker.withRegistry( 'https://registry.homelab.com', 'docker-creds' ) {
+                   docker.withRegistry( 'https://registry.homelab.com' ) {
                        appimage.push()
                        appimage.push('latest')
                    }
