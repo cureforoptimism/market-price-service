@@ -1,7 +1,7 @@
 pipeline {
    agent any
    environment {
-       registry = "registry.homelab.com/market-price"
+       registry = "registry.homelab.com/discordbots/market-price"
    }
    stages {
        stage('Build Dockerfile and Publish') {
@@ -18,7 +18,7 @@ pipeline {
       stage ('Deploy') {
            steps {
                script{
-                   def image_id = "registry.homelab.com/market-price" + ":$BUILD_NUMBER"
+                   def image_id = "registry.homelab.com/discordbots/market-price" + ":$BUILD_NUMBER"
                    sh "ansible-playbook  playbook.yml --extra-vars \"image=${image_id}\""
                }
            }
